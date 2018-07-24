@@ -8,13 +8,13 @@
     thead
       tr
         th Title
-        th Urgent
+        th Urgent?
         th Actions
     tbody
       - todos.each do |todo|
         tr
           td = todo.title
-          td = todo.urgent
+          td = "urgent!" if todo.urgent
           td
             span
               == link_to("read", "/todos/#{todo.id}", class: "btn btn-primary btn-sm")
